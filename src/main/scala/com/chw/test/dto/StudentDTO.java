@@ -7,6 +7,14 @@ public class StudentDTO {
 
     private String studentName;
 
+    public StudentDTO() {
+    }
+
+    public StudentDTO(Long studentId, String studentName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+    }
+
     public Long getStudentId() {
         return studentId;
     }

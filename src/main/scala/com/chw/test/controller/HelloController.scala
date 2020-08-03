@@ -3,7 +3,7 @@ package com.chw.test.controller
 import java.util
 import java.util.Date
 
-import com.chw.test.dto.StudentDTO
+import com.chw.test.dto.{StudentDTO, TeacherDTO}
 import org.springframework.web.bind.annotation.{RequestMapping, RestController}
 
 /**
@@ -25,11 +25,14 @@ class HelloController {
 
   @RequestMapping(Array("/newStudent"))
   def newStudent() = {
-    val student = new StudentDTO
-    student.setStudentId(1L)
-    student.setStudentName("Carl")
+    val student = new StudentDTO(1L,"Carl")
     student.sayHello()
     student
+  }
+
+  @RequestMapping(Array("/newTeacher"))
+  def newTeacher() = {
+    new TeacherDTO(2,"Nancy")
   }
 
 }
